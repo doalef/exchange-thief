@@ -4,6 +4,7 @@ import cors from 'cors';
 
 export default (app) => {
     app.use(morgan('dev'));
-    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({extended:true}))
+    app.use(bodyParser.json())
     app.use(cors());
 }

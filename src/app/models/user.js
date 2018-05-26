@@ -2,16 +2,9 @@ import mongoose from 'mongoose';
 let Schema = mongoose.Schema;
 
 let UserSchema = new Schema({
-    type: {type: Number, default: 0, max:8},
+    type: {type: Number, default: 0, max:2},
 
-    firstName: {type: String, required: true},
-    lastName: {type: String, required: true},
 
-    username: {type: String, required: true, unique: true},
-
-    address: {type: String},
-
-    gender: {type: String, required: true},
     email: {type: String, unique: true},
     phone: {type: String, unique: true},
 

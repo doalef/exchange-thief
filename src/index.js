@@ -11,28 +11,28 @@ import api from './app/routes';
 import * as CS from './app/scrapers';
 import nodemailer from 'nodemailer';
 
-let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'amirali.ah77@gmail.com',
-        pass: '139292aa'
-    }
-});
+// let transporter = nodemailer.createTransport({
+//     service: 'gmail',
+//     auth: {
+//         user: 'amirali.ah77@gmail.com',
+//         pass: '139292aa'
+//     }
+// });
 
-var mailOptions = {
-    from: 'amirali.ah77@gmail.com',
-    to: 'david@mailinator.com',
-    subject: 'Sending Email using Node.js',
-    text: 'That was easy!'
-};
+// var mailOptions = {
+//     from: 'amirali.ah77@gmail.com',
+//     to: 'amirali.binq@gmail.com',
+//     subject: 'Sending Email using Node.js',
+//     text: 'That was easy!'
+// };
 
-transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-        console.log(error);
-    } else {
-        console.log('Email sent: ' + info.response);
-    }
-});
+// transporter.sendMail(mailOptions, function (error, info) {
+//     if (error) {
+//         console.log(error);
+//     } else {
+//         console.log('Email sent: ' + info.response);
+//     }
+// });
 
 //Setting Up Web Server
 let app = express();
@@ -40,6 +40,9 @@ let app = express();
 db();
 // Setting Up Common Middlewares
 common(app);
+app.use(express.static(__dirname + '/app/public'));
+app.set('views', 'src/app/views');
+app.set('view engine', 'ejs');
 
 api(app);
 
@@ -47,12 +50,6 @@ CS.currencyScraper()
 
 app.listen(3000, (err) => {
     console.log(
-        (err) ? err : `http://localhost:3000\nhttp://${ip.address()}:3000`
+        (err) ? err : `http://${ip.address()}:3000`
     )
-    if (!err) {
-        clipboardy.write(`http://${ip.address()}:3000`)
-            .then((res) => {
-                console.log('\nURL copied to clipboard\n', );
-            })
-    }
 })

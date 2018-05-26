@@ -1,0 +1,35 @@
+body{
+    background-image:url("/img/cloud.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    height: 100vh;
+}
+
+
+.name-ads{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+
+}
+
+.bozorg{
+    color:#9a9f91
+}
+
+
+
+.background-color{
+    background-color: #f0ddf1;
+    padding: 15px;
+    height: 180px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+    
