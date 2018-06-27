@@ -48,8 +48,8 @@ api(app);
 
 CS.currencyScraper()
 
-app.listen(3000, (err) => {
+app.listen(4000, (err) => {
     console.log(
-        (err) ? err : `http://${ip.address()}:3000`
+        (err) ? err : `http://${ip.address()}:4000`
     )
 })

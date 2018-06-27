@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const uri = "mongodb://127.0.0.1:27017/exhange-thief";
+const uri = "mongodb://root:123456aa@ds129780.mlab.com:29780/exchange-thief";
 export default () => {
   mongoose.connect(uri, err => {
     console.log(
