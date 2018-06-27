@@ -9,7 +9,8 @@ export default () => {
                 .then((value) => {
                     res.status(200).render('index',value);
                 }).catch((err) => {
-                    res.send(500);
+                    console.log(err);
+                    res.sendStatus(500);
                 })
             
         });
