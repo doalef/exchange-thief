@@ -48,8 +48,8 @@ api(app);
 
 CS.currencyScraper()
 
-app.listen(4000, (err) => {
+app.listen(process.env.PORT || 3000, (err) => {
     console.log(
-        (err) ? err : `http://${ip.address()}:4000`
+        (err) ? err : `http://${ip.address()}:${process.env.PORT || 3000}`
     )
 })
